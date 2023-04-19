@@ -12,5 +12,5 @@ export const Container = styled.div`
 `
 
 export const Logo = styled.img`
-  margin-bottom: 2.1875rem;
+  margin-bottom: 6rem;
 `

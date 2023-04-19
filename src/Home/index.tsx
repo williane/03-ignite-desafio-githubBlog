@@ -1,12 +1,10 @@
-import { Header } from '../components/Header'
-import { Container } from './styes'
+import { Profile } from './Profile'
+import { Container } from './styles'
 
 export function Home() {
   return (
     <Container>
-      <div>
-        <h1>Hello World</h1>
-      </div>
+      <Profile />
     </Container>
   )
 }
