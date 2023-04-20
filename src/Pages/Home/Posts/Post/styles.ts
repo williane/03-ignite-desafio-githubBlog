@@ -11,7 +11,13 @@ export const Container = styled.div`
   padding: 2rem;
 
   background-color: ${(props) => props.theme['base-post']};
+  border: 2px solid transparent;
   border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid ${(props) => props.theme['base-label']};
+  }
 `
 
 export const TitleWrapper = styled.div`
@@ -20,7 +26,7 @@ export const TitleWrapper = styled.div`
   gap: 1rem;
 
   & > strong {
-    width: 17.6875rem;
+    width: 17rem;
     font-size: 1.25rem;
     line-height: 160%;
     color: ${(props) => props.theme['base-title']};

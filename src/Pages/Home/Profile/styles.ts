@@ -49,7 +49,7 @@ export const ProfileTitle = styled.div`
     color: ${(props) => props.theme['base-title']};
   }
 `
-export const Github = styled.div`
+export const Github = styled.a`
   display: flex;
   align-items: center;
 
@@ -58,6 +58,8 @@ export const Github = styled.div`
   gap: 0.5rem;
 
   border-bottom: 1px solid transparent;
+  text-decoration: none;
+  outline: none;
 
   & > span {
     font-family: 'Nunito';
