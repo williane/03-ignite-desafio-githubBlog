@@ -46,6 +46,7 @@ export const ProfileTitle = styled.div`
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 130%;
+    color: ${(props) => props.theme['base-title']};
   }
 `
 export const Github = styled.div`
@@ -55,6 +56,8 @@ export const Github = styled.div`
   margin-bottom: 0.5rem;
 
   gap: 0.5rem;
+
+  border-bottom: 1px solid transparent;
 
   & > span {
     font-family: 'Nunito';
@@ -70,10 +73,16 @@ export const Github = styled.div`
   & > i {
     color: ${(props) => props.theme['brand-blue']};
   }
+
+  &:hover {
+    border-bottom: 1px solid ${(props) => props.theme['brand-blue']};
+    cursor: pointer;
+  }
 `
 
 export const ProfileDescription = styled.p`
   line-height: 160%;
+  color: ${(props) => props.theme['base-text']};
 `
 
 export const ProfileDetails = styled.div`
@@ -93,6 +102,7 @@ export const ProfileDetail = styled.div`
   gap: 0.5rem;
 
   text-align: center;
+  color: ${(props) => props.theme['base-text']};
 
   & > i {
     color: ${(props) => props.theme['base-label']};

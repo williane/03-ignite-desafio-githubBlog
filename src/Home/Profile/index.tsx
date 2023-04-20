@@ -22,9 +22,9 @@ export function Profile() {
           </Github>
         </ProfileTitle>
         <ProfileDescription>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
+          Formada em Analise e desenvolvimento de sistemas, apaixonada por
+          desenvolvimento e inovação. E fascinada em solucionar problemas
+          através da logica.
         </ProfileDescription>
         <ProfileDetails>
           <ProfileDetail>
