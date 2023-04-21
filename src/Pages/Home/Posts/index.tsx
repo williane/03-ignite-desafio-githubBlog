@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { Post } from './Post'
 import { Container } from './styles'
 
@@ -17,7 +18,11 @@ export function Posts({ posts }: PostsProps) {
   return (
     <Container>
       {posts?.length > 0 &&
-        posts.map((post) => <Post key={post.id} post={post} />)}
+        posts.map((post) => (
+          <NavLink to={`/post/${post.number}`} key={post.id}>
+            <Post post={post} />
+          </NavLink>
+        ))}
     </Container>
   )
 }
