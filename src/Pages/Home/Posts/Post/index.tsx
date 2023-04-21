@@ -1,3 +1,5 @@
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { Container, Description, TitleWrapper } from './styles'
 
 interface PostsProps {
@@ -17,7 +19,12 @@ export function Post({ post }: PostProps) {
     <Container>
       <TitleWrapper>
         <strong>{post.title}</strong>
-        <time>Há 1 dia</time>
+        <time>
+          {formatDistanceToNow(new Date(post.updated_at), {
+            addSuffix: true,
+            locale: ptBR,
+          })}
+        </time>
       </TitleWrapper>
       <Description>{post.body}</Description>
     </Container>

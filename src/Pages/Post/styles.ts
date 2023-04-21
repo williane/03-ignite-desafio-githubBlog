@@ -61,7 +61,7 @@ export const InformationDetails = styled.div`
 
   gap: 2rem;
 
-  width: 24.5625rem;
+  width: 100%;
 
   margin-top: 0.5rem;
 `

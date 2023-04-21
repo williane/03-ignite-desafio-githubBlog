@@ -13,6 +13,8 @@ import {
 } from './styles'
 import { api } from '../../lib/axios'
 import { MarkdownHighlighter } from './MarkdownHighlighter'
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 interface PostProps {
   html_url: string
@@ -32,6 +34,7 @@ export function Post() {
   const githubLogin = 'williane'
   const apiUrl = `repos/${githubLogin}/${repository}/issues/${slug}`
   const markdown = post?.body ? post.body : ''
+  const datePost = post?.updated_at ? post.updated_at : new Date()
 
   async function fetchPost() {
     const response = await api.get(apiUrl)
@@ -63,7 +66,10 @@ export function Post() {
           </InformationDetail>
           <InformationDetail>
             <i className="fa-solid fa-calendar-day fa-sm"></i>
-            Há 1 dia
+            {formatDistanceToNow(new Date(datePost), {
+              addSuffix: true,
+              locale: ptBR,
+            })}
           </InformationDetail>
           <InformationDetail>
             <i className="fa-solid fa-comment fa-sm"></i>
