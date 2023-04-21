@@ -34,7 +34,6 @@ interface MarkdownHighlighterProps {
 }
 
 export function MarkdownHighlighter({ markdown }: MarkdownHighlighterProps) {
-  console.log(markdown)
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}

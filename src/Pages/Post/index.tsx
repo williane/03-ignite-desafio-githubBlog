@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Container } from './styles'
+import {
+  Container,
+  InformationCard,
+  InformationDetail,
+  InformationDetails,
+  Navigation,
+  NavigationButton,
+  ReadOnly,
+  Title,
+} from './styles'
 import { api } from '../../lib/axios'
 import { MarkdownHighlighter } from './MarkdownHighlighter'
 
@@ -33,5 +42,38 @@ export function Post() {
     fetchPost()
   }, [])
 
-  return <Container></Container>
+  return (
+    <Container>
+      <InformationCard>
+        <Navigation>
+          <NavigationButton href="/">
+            <i className="fa-solid fa-chevron-left fa-sm"></i>
+            voltar
+          </NavigationButton>
+          <NavigationButton href={post?.html_url} target="_blank">
+            ver no github
+            <i className="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+          </NavigationButton>
+        </Navigation>
+        <Title>{post?.title}</Title>
+        <InformationDetails>
+          <InformationDetail>
+            <i className="fa-brands fa-github fa-sm"></i>
+            {post?.user.login}
+          </InformationDetail>
+          <InformationDetail>
+            <i className="fa-solid fa-calendar-day fa-sm"></i>
+            Há 1 dia
+          </InformationDetail>
+          <InformationDetail>
+            <i className="fa-solid fa-comment fa-sm"></i>
+            {post?.comments} comentários
+          </InformationDetail>
+        </InformationDetails>
+      </InformationCard>
+      <ReadOnly>
+        <MarkdownHighlighter markdown={markdown} />
+      </ReadOnly>
+    </Container>
+  )
 }
